@@ -365,6 +365,15 @@ glide install
 go build
 
 ## ruby
+sudo yum install -y gcc git wget bzip2
+wget -O ruby-install-0.7.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.
+tar -xzvf ruby-install-0.7.0.tar.gz
+cd ruby-install-0.7.0/
+sudo make install
+sudo /usr/local/bin/ruby-install --system ruby 2.3.1
+sudo yum remove ruby
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+source ~./bash_profile
 cd /var/www/webapp/ruby
 gem install bundler
 bundle install
